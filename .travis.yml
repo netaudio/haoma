@@ -1,8 +1,16 @@
 language: go
 go: master
+node_js: "node"
+cache:
+  directories:
+    - "node_modules"
 env:
   - VERSION=$(cat VERSION)
 before_deploy:
+  - "cd frontend"
+  - "npm install"
+  - "npm run build"
+  - "cd .."
   - "GOOS=linux  GOARCH=amd64 go build -o haoma-v$VERSION-linux-amd64"
   - "GOOS=darwin GOARCH=amd64 go build -o haoma-v$VERSION-darwin-amd64"
   - "GOOS=windows GOARCH=amd64 go build -o haoma-v$VERSION-windows-amd64.exe"

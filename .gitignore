@@ -14,6 +14,7 @@ debug
 tests/
 routers/commentsRouter__________Projects_go_src_github_com_wwek_haoma_controllers.go
 npm-debug.log
+gui/
 
 # vendor
 
