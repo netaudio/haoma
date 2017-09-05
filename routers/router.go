@@ -29,7 +29,7 @@ func init() {
 	)
 	beego.AddNamespace(ns)
 	beego.Get("/", func(ctx *context.Context) {
-		ctx.Redirect(302, "/gui")
+		ctx.Redirect(302, "/gui/")
 		//ctx.Output.Body([]byte("hello world"))
 	})
 }
